@@ -1,0 +1,37 @@
+<%= form_with(model: call_detail, local: true) do |form| %>
+  <% if call_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(call_detail.errors.count, "error") %> prohibited this call_detail from being saved:</h2>
+
+      <ul>
+      <% call_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :call_id %>
+    <%= form.number_field :call_id, id: :call_detail_call_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :word %>
+    <%= form.text_field :word, id: :call_detail_word %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.text_field :start_time, id: :call_detail_start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.text_field :end_time, id: :call_detail_end_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

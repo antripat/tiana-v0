@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Call Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Call ID</th>
+      <th>Word</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @call_details.each do |call_detail| %>
+      <tr>
+        <td><%= call_detail.call_id %></td>
+        <td><%= call_detail.word %></td>
+        <td><%= call_detail.start_time %></td>
+        <td><%= call_detail.end_time %></td>
+        <td><%= link_to 'Show', call_detail %></td>
+        <td><%= link_to 'Edit', edit_call_detail_path(call_detail) %></td>
+        <td><%= link_to 'Destroy', call_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Call Detail', new_call_detail_path %>
