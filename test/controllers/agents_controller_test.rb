@@ -17,7 +17,7 @@ class AgentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create agent" do
     assert_difference('Agent.count') do
-      post agents_url, params: { agent: { CallDetail_id: @agent.CallDetail_id, agent_id: @agent.agent_id, name: @agent.name } }
+      post agents_url, params: { agent: { agent_id: @agent.agent_id, call_detail_id: @agent.call_detail_id, name: @agent.name } }
     end
 
     assert_redirected_to agent_url(Agent.last)
@@ -34,7 +34,7 @@ class AgentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update agent" do
-    patch agent_url(@agent), params: { agent: { CallDetail_id: @agent.CallDetail_id, agent_id: @agent.agent_id, name: @agent.name } }
+    patch agent_url(@agent), params: { agent: { agent_id: @agent.agent_id, call_detail_id: @agent.call_detail_id, name: @agent.name } }
     assert_redirected_to agent_url(@agent)
   end
 

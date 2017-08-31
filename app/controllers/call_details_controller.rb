@@ -1,10 +1,21 @@
 class CallDetailsController < ApplicationController
   before_action :set_call_detail, only: [:show, :edit, :update, :destroy]
 
+#  def bytime
+#      @call_details = CallDetail.where("start_time>= :start_time AND end_time<= :end_time",
+#      {start_time: call_detail_start_time, end_time: call_detail_end_time})
+#  end
+
+
   # GET /call_details
   # GET /call_details.json
   def index
-    @call_details = CallDetail.all
+    @call_details = CallDetail.search(params)
+    #if (params[:start_time]) && (params[:end_time])
+      #@call_details = CallDetail.search(params)
+    #else
+    #@call_details = CallDetail.all
+  #end
   end
 
   # GET /call_details/1

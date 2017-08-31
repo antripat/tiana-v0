@@ -3,7 +3,7 @@ class CreateAgents < ActiveRecord::Migration[5.1]
     create_table :agents do |t|
       t.integer :agent_id
       t.string :name
-      t.references :CallDetail, foreign_key: true
+      t.references :call_detail, foreign_key: true
 
       t.timestamps
     end

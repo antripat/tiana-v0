@@ -1,0 +1,10 @@
+<%= form_tag call_details_path, :method => 'get' do %>
+<p>
+<%= text_field_tag :start_time, params[:start_time], placeholder: "Start Time" %>
+</p>
+<p>
+<%= text_field_tag :end_time, params[:end_time], placeholder: "End Time" %>
+</p>
+
+<%= submit_tag "Search", :name =>nil %>
+<% end %>

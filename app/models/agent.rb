@@ -1,3 +1,3 @@
 class Agent < ApplicationRecord
-  belongs_to :CallDetail
+  belongs_to :call_detail
 end

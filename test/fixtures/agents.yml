@@ -3,9 +3,9 @@
 one:
   agent_id: 1
   name: MyString
-  CallDetail: one
+  call_detail: one
 
 two:
   agent_id: 1
   name: MyString
-  CallDetail: two
+  call_detail: two

@@ -1,3 +1,7 @@
+<h1>Query Form</h1>
+
+<%= render 'bytime_call_details', call_detail: @call_detail %>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Call Details</h1>
@@ -30,4 +34,5 @@
 
 <br>
 
-<%= link_to 'New Call Detail', new_call_detail_path %>
+<p><%= link_to 'New Call Detail', new_call_detail_path %></p>
+<%= link_to 'Back', main_page_call_details_path %>

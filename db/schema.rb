@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824171227) do
+ActiveRecord::Schema.define(version: 20170825050337) do
 
   create_table "agents", force: :cascade do |t|
     t.integer "agent_id"
     t.string "name"
-    t.integer "CallDetail_id"
+    t.integer "call_detail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["CallDetail_id"], name: "index_agents_on_CallDetail_id"
+    t.index ["call_detail_id"], name: "index_agents_on_call_detail_id"
   end
 
   create_table "call_details", force: :cascade do |t|
