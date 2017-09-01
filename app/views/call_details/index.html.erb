@@ -1,9 +1,26 @@
+<div id="container"></div>
+<%= high_chart("container", @chart) %>
+<!--<script type="text/javascript" charset="utf-8">
+  $(function () {
+    new Highcharts.Chart({
+      chart: { renderTo: 'word_count_chart' },
+      title: { text: 'Word Count by Call ID' },
+      xAxis: { type: 'datetime' },
+      yAxis: { title: { text: 'Dollars' } },
+    series: [{
+      name: 'test',
+      data: [1, 2, 5, 7, 3]
+    }]
+    });
+  });
+</script>-->
+
+
 <h1>Query Form</h1>
 
 <%= render 'bytime_call_details', call_detail: @call_detail %>
 
 <p id="notice"><%= notice %></p>
-
 <h1>Call Details</h1>
 
 <table>

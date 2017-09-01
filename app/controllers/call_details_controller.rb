@@ -6,11 +6,24 @@ class CallDetailsController < ApplicationController
 #      {start_time: call_detail_start_time, end_time: call_detail_end_time})
 #  end
 
-
   # GET /call_details
   # GET /call_details.json
   def index
     @call_details = CallDetail.search(params)
+    @x_axis = CallDetail.distinct.pluck(:call_id)
+    @word_count_bycallid = CallDetail.group(:call_id).count(:word).values
+    @chart = LazyHighCharts::HighChart.new('graph') do |f|
+      f.title(text: "Count Words in Calls")
+      f.xAxis(categories: @x_axis)
+      f.series(name: "Word Count", yAxis: 0, data: @word_count_bycallid)
+
+      f.yAxis [
+        {title: {text: "Word Count", margin: 70} }
+      ]
+
+      f.legend(align: 'right', verticalAlign: 'top', y: 75, x: -50, layout: 'vertical')
+      f.chart({defaultSeriesType: "column"})
+    end
     #if (params[:start_time]) && (params[:end_time])
       #@call_details = CallDetail.search(params)
     #else
